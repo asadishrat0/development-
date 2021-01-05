@@ -1,0 +1,11 @@
+rename-command APPENDrename-command APPEND ""
+rename-command BGSAVE ""
+rename-command RENAME ""
+rename-command SAVE ""
+rename-command SPOP ""
+rename-command SREM ""
+save 900 1
+save 300 10
+save 60 10000
+
+https://www.digitalocean.com/community/tutorials/how-to-install-redis-from-source-on-ubuntu-18-04

@@ -1,0 +1,30 @@
+we have 2 server in hyper v both join a domain with AD server its ip is 192.168.200.32
+1: session host 192.168.200.33 anderson.jolly@arpatechops.com	ArpatecH157!
+2: RDS server   192.168.200.18
+3: AD server    192.168.200.32
+4: AD connect server 
+
+we have pooled based senerio in our RDS envoirement
+ 
+In session host machine only install session host role and its join domain to ad server 
+In RDS server we have install role rdbroker and rd web 
+we have also created profile folder in that folder all profile is stored and saved in session host d drive
+we have also AD connect server that is used to connect to azure AD
+
+we want to migrate all user session to azure vdi through the azure migrate '
+
+we already spin in azure migrate through lakeside but its not working properly
+
+
+
+
+
+
+
+
+
+
+
+
+
+

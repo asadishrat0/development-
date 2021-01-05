@@ -1,0 +1,1106 @@
+all right so
+let's start all right team we have comey
+with us and he's the director of id at
+excel brands
+and he will help us explore their
+platform
+and aquami from our cloud team we have
+uh
+rai with mspe program owner we have asi
+bulid as a devops guys
+and we have abdullah with us
+so uh coming back to the technical
+discovery we will be covering
+three agenda items which is uh that our
+team will be conducting walkthrough of
+your platform and
+at the initial stage then they will move
+on to discuss activities and approaches
+with you
+and sounds good
+perfect perfect okay so let's
+start abdullah would you like to start
+okay so my name is abdullah and
+i'm here from i'm from the msp team here
+at connection
+so you guys already have a subscription
+with our csp
+uh program here at connection is that
+correct
+uh yes we do ours we have
+csp through connection and then we also
+have some things
+that we pay for directly through
+microsoft on credit cards
+right so you're looking to migrate your
+servers to that subscription
+um kind of so there's multiple things
+happening at once
+one of the things is we currently have
+archived servers we have archived
+information
+in uh in blob containers
+and i had some questions about how we
+could better utilize that information
+we also have disaster recovery and
+backup running
+on one of our servers and we're looking
+to
+kind of shift all of our servers that
+way to use
+the backup and disaster recovery tools
+and
+to test how they would work in a
+disaster
+situation such as like we don't have the
+vpn currently set up
+so we're looking to also kind of test
+that functionality see how that works
+kind of use your skills and these uh
+and these credits to kind of test that
+functionality that actually works
+and then there's
+those are the two main things and the
+other thing was uh
+we want to properly federate our
+environment with our
+with our azure environment so right now
+we do have azure ad
+as a part of our office 365 e3
+account but we're only using the azure
+ad sync
+and we're not actually federated so we
+just want to those are the three main
+boxes that we want to kind of work
+through
+does that make sense
+yeah yeah that makes sense so in the uh
+vpn part are you you guys want to set up
+a side-to-side vpn to azure
+uh yeah so i want to know if it's
+possible to only
+do it temporarily or is it something
+that
+we only use because in in reality we'll
+only be using it
+for disaster recovery so if we
+if you go to our portal account you'll
+see that we have one server
+with the backup and disaster recovery if
+we turn that server
+on in case of emergency
+how do we get to it i believe that we
+would need to set up a vpn tunnel and
+that's something that is not currently
+set up in the microsoft environment
+we use cisco firewall so it's very easy
+to add a new vpn tunnel
+but that's something that we have not
+tested or paid for or anything yet
+so i want to kind of go through that
+process and to figure out if it's like a
+metered purchase
+as in uh if we set it up right now
+is it just humming along at a very low
+cost
+all the time until we actually turn the
+server on
+or is it just you pay for it and it's a
+standard fee
+for the inevitable future and whether
+we're using it or not using it
+you basically pay for the bandwidth that
+you consume through that
+vpn tunnel uh in azure
+got it okay so it could be set up now
+and
+yeah we're just not using it we're just
+not using it
+right let's provide their uh
+solution the gateway vpn you can use
+your cisco
+firewall or router to connect to it got
+it
+so now my question is um
+we currently do our backups over the
+internet normally
+um using the azure backup and disaster
+recovery tool on one of the servers
+uh will that affect what data goes over
+the vpn tunnel
+or no actually it shouldn't right
+because technically
+the vpn tunnel will only give traffic
+across to the
+ip address or dns entry to that server
+so the backups still happen over the
+internet
+not utilizing any of the uh
+the vpn tunnel
+all right that makes sense
+yeah yeah yeah that didn't make sense so
+if you only actually if you're accessing
+the uh
+backups using the private ip through the
+tunnel then
+it will charge you for that bandwidth
+otherwise through the public iep uh you
+won't be charged
+for that vpn bandwidth
+okay so we have uh so that
+seems to be a because this is like our
+environment walk through i guess is this
+like the discussion of what
+we want to do or do you actually want to
+talk about it so
+kami this is right here so nice to meet
+you um
+this generally is pretty open which
+means we want to assess and discover
+your different use cases and how your
+artifacts look and resources look in
+your subscriptions and then we'll come
+back with recommendations later
+is it a subscription to subscription
+move let's say you have two as your
+subscriptions and pay as you go
+and remove them under the csp tenant on
+the other hand stuff that you want to
+move from on-prem
+that's piecemeal and things like vpn so
+all your questions we'll note them now
+and we'll look at cost optimization and
+you know assess
+migration parts and then come back with
+recommendations after this
+got it okay because i am very well known
+for going off topic and going
+over time so i'm trying to like pace
+myself with your schedule your
+schedule's gonna be very
+well knowing that about yourself is is
+very good that's good speaking
+if i if i could get there fast i will
+but sometimes takes a little
+longer than expected so in terms of
+setting up the vpn in our disaster
+recovery
+that seems to be i understand what i'm
+asking for
+a little um a little bit more and i kind
+of understand what you guys are
+providing for that uh the next thing
+would be
+and i already know how to use the
+disaster recovery and backup tool
+so we will be moving more servers down
+the line
+into our microsoft azure account for
+the backups and desktop recovery we may
+actually do some
+during this process just to kind of make
+sure that we streamline that process
+because i have some two smaller servers
+that i do want to move as well um so
+that's
+vpn disaster recovery thought ended
+next part is going to be the azure uh
+um and the federa the azure ad
+federation
+um i know it gives a lot of benefits
+with single sign-on
+uh and as we start moving towards
+having more servers and containers in
+azure it'll make it easier for our users
+and myself to get access to those
+resources
+um so i just need help getting through
+that process
+as easily as possible um
+so that's another thing which i think is
+just a process
+that i just feel like is a little
+outside of my uh comfort zone so that
+you guys help
+will be highly appreciated
+and then there is the magic of
+understanding
+how how our archive environment needs to
+work
+um so currently we
+we had an issue with our in-house server
+environment
+and we needed to get data out of our
+sand
+and um offer our main sand and off of
+a bunch um of nasa's that
+nate has told me in the past so what we
+did was
+we took something i think it's something
+like 24 terabytes of data
+and we moved it out to blob storage uh
+currently as like a cost thing what we
+did was
+i provided people who needed to look
+into those long term archived
+blob storages i gave them access to
+the um to the file explorer
+to the azure file explorer so i
+installed it on like you know windows
+computer or a mac
+and said this is how you get in this is
+how you get to it
+and i'm trying to think of how
+this could be a better solution but for
+a similar price
+so one of the things i was thinking
+about was
+creating a in-house
+archive file server so using you know
+windows 2019
+installing the file server uh service
+and hosting it there with you know
+um cheap disk and you know a low count
+on processors and ram
+for people to access locally and then
+using
+the azure backup and disaster recovery
+tool
+to sync the data between
+that server and blob storage or use the
+file explorer and
+do it manually and copying everything
+off of the server
+to the um to my blob stores containers
+because my thing is i don't really want
+to
+host the archive data in um
+in the azure environment as a file share
+because of the cost difference between
+blob storage
+and like we have physical hardware
+and i don't want to end up like spending
+a bunch of money
+to replicate the physical hardware
+environment
+in the azure environment per se for
+these shares
+because what happens is i feel like the
+mac computers do a lot of chatter
+across so we would end up with a lot of
+usage
+and uploads and downloads because of how
+the mac
+indexes files the windows computers i
+feel like are fine with it it is a
+windows you know environment windows
+servers
+it's going to work a little bit easier
+with them but we do have like a
+60 40 70 30 kind of split of
+leaning towards our mac users and that
+has been an issue we've had an in-house
+service as well
+so just trying to go over the ideas
+of how we could share this archive data
+that in reality
+we access maybe twice
+no like once every other month and it's
+very directed so we want to keep that
+cost down as much as possible
+and i think that is all i have
+okay so those are the three use cases
+the team maybe
+what we do is we walk through the
+current environment and see how those
+use cases apply
+to the assets yeah i think we
+did did we note those team to walk
+through the three use cases
+video recorded as well yeah and i also
+know what it's done
+wow you guys have to listen to my voice
+over and over and over again huh
+can't wait
+i wrote down ad federation
+sharing and
+access or access access all right we're
+not even gonna
+talk about uh the cherry servers
+uh no no that was not a part of just
+completely
+okay all right sound good the blue
+cherry servers are
+a end-of-year situation where this
+thousand dollar credit wouldn't even be
+helpful
+okay sound good yeah guys just to bring
+the rest of the azure team up
+uh we have a current these guys are
+paying
+for a hosted solution with a uh the
+software provider is hosting it and
+they're just they're killing us okay and
+there's a cost
+so uh it's a hosted azure instance with
+sql and a whole bunch of different
+support servers there's about a dozen of
+them in total
+and uh we've already started to work
+with um oh gosh who's our madman
+that was helping us out i forget who
+his name was but he gave us some some
+really good quotes and we are looking to
+do
+in that particular thing which is a
+different conversation but
+i'll briefly go over it it's like uh
+it's like 11 or 12 servers
+sql file servers um uh there's
+uh what the hell i mean there's terminal
+servers involved there's
+a bunch of servers in the situation and
+we're gonna be splitting that
+between an on-prem environment and
+rather than putting things in a dmz
+we're going to move the terminal servers
+uh and a copy of the sql server
+out into the azure environment to uh
+to host our chinese and you know our all
+of our um
+basically all of our remote companies
+that we work with
+they'll be using that environment but
+that is currently not a part of this
+discussion
+right okay so yeah that's uh guys just
+meant to note there's another
+there is yet another project that's
+floating around with this organization
+that uh we've already engaged with uh
+bert sawicki i think
+i think he's that's his last name so
+wiki so
+sorry i didn't mean to interrupt no
+problem you know you gotta show them
+that i'm i'm i'm not crazy we're we're
+doing some kind of work
+absolutely so i said would you mind
+bringing up your environments
+uh or like is this vms if you're gonna
+have a walkthrough
+of all the servers that you spoke about
+and then we can start
+you know asking questions specific to
+each of your use cases
+okay so we're gonna start with the azure
+no with um
+i guess i want to start with the vpn and
+disaster recovery so i could pull up the
+servers
+um the server that we're working with in
+that case
+and also the um
+so it's on our azure porter page portal
+page
+so i'll go ahead and uh clean my desktop
+of all the
+junk here that i have open
+and i guess i'll share my screen
+um
+all right so just to keep things clean
+i'm just going to share this chrome tab
+here
+so this is currently what we have
+available in
+our in our azure portal
+um the main server that
+we currently have in here which
+basically was like a test
+is
+was it back up what up here it goes xl
+fs02
+this is part of your psja ghost
+subscription
+this is i don't know which one this is
+build through
+this might be no this is this through
+you need no this is
+our through our pay as you go
+so we want to move this as well into a
+csp we want to
+uh one of the issues that we had
+previously which is how billing was done
+i believe i asked nate for some samples
+of what our new builds will look like uh
+so that we could move away from having
+things go through our credit card
+and have them going through the guys
+over at connection instead
+and i think i owe every single one of my
+clients a usage report guys
+got it yeah because it was yeah because
+people were asking questions about the
+bill before and the way that the billing
+was set up was
+it was very hard to read even for me
+who kind who understands what the bills
+should be
+well they promised us with the new erp
+system
+that this was all gonna just be
+wonderful so we'll find out i'll get the
+uh i've got current usage reports that i
+just requested today i'll let you know
+how improved
+how improved and clear they are you know
+as soon as i get through that process
+hold on tight yes this it does say it's
+part of the pay-as-you-go system
+um i fumble around through this a lot
+um so is there anything particular that
+you'd like to see
+in this like do you want to see the
+actual server do you want to see
+something that's happening in the portal
+page
+do you want to see like the vm well i
+guess the vm information behind it
+doesn't really matter in this case
+uh you you can just show the resources
+that you want to migrate over
+there
+yeah so excel fs02
+is the server that we're looking to uh
+have moved from pay as you go to csp
+what's the csp stand for by the way
+cloud solution provider oh okay
+and i guess yeah microsoft program
+gotcha so this is what we want to move
+away from the page you go
+into a csp situation
+um this is currently
+i think there's there may be 12 at least
+12 terabytes of data
+in this backup uh yes
+i think one way to look at this and yeah
+correct me 15 and a half
+15 app okay so team uh should we just go
+through subscription because we can look
+at all your resources in your ps4
+subscription
+and we can look at migrating all that
+complete subscription
+under your csp tenant so the two ways to
+do the migration one is to move your
+subscription if you don't have anything
+else
+uh your endpoints remain the same that
+could be one way to do it
+the other way is to basically migrate
+from one subscription to the other
+on a resource basis so i think it would
+be good to understand what do you have
+running in your pay as you go
+and can we do it as one block you know
+and just have it live under
+the csp tenant that way your billing
+will all consolidate
+under the csp program uh so you get the
+best of both worlds so
+you get everything that you're running
+here but through the new administrative
+control
+gotcha okay so if you could guide me to
+show you what you want to see
+that'll be super helpful in the
+situation
+sure so i think we can go to
+subscriptions right at the top if you go
+home and then there should be
+subscriptions
+we should be able to see all the
+subscriptions you have access to
+so it turns out there are two in there
+there's microsoft as you go oh no sorry
+microsoft azure
+and then access to active directory
+so which one do you know is unders is
+this any one of these is under csp or
+these are both pages ago i think
+access to azure active directory is
+definitely csp
+because our whole e3 environment is
+through
+connection now when it comes to
+uh looks like this says csp as well
+um yeah so this is i guess
+yeah this is azure active directory
+so i'm not sure if that counts as
+anything but this is this one says csp
+and what are the resources under here i
+guess
+the resources under here are
+okay so we do have our blue cherry
+uh bi gateway which connects
+our um our azure environment
+over to another tool that we're using so
+that seems to be going through
+uh this
+as well and then we have two storage
+accounts which are
+two blob storage accounts i believe
+these are both
+also going through csp so that the one
+thing that is not going through csp
+is going to be that um
+that xl fs02 uh
+disaster recovery and backup
+which is you know the the larger part of
+uh
+our azure portal like uh
+cost
+okay i don't see that here which is
+weird yeah that's what's throwing me off
+too
+so team is there a way to identify from
+a resource this description it's under
+like if you go to you know that actual
+guy and
+then reverse engineer from there
+recovery services
+while we're there
+daily at 3am let's get back i'll take
+another day at 3 a.m
+30 days
+looks like something i would do
+so this resource is not sitting under
+any of the subscriptions it seems to be
+right on the main tenant for some
+for a lack of a better way to disappear
+as you go
+yeah i am salman from connection csp
+team on the lead there
+um can you go back to the subscription
+okay the bottom one uh the one that says
+microsoft azure
+yes this is the one that's from us
+actually
+from connection csp that's what
+something i can see on our tenant
+but the other one i'm unable to find
+that one um
+so showing two of three can you can you
+click on that access to azure data
+i found it there you go
+little check box show only subscription
+selected and global subscription filter
+which i don't
+know if i selected that but um
+it was really swept underneath the
+carpet i'm glad you guys were able to
+find that
+all right so now we click this we go
+here
+and yeah that's more like the bill it
+was like 99 that'd be fantastic
+so yeah now if you go under resources
+here we should be able to
+see the stuff
+yep it's there
+to make this a little bigger
+so yeah that that's what i'm talking
+about we can move the whole subscription
+under that tenant and then if it just
+has resource group the team probably has
+to identify if this is something we can
+move or we have to recreate
+as a migration path so abdullah salman
+what suggestions do you have
+there
+the storage account can be migrated as
+it is
+it does not have to be recreated
+okay um
+so one of the questions i have is uh
+well
+i'm not sure if this is a you thing or
+or what it is but is there any way to
+continue
+to have this
+uh this kind of like cost analysis view
+and move it to csp
+yes and all this the cost analysis you
+see is available to all subscriptions
+rather on
+either page you go under csp it's the
+same thing
+this should not this should not go away
+so that was invoices
+yes it was like please go here for
+invoices and then you lose the ability
+to kind of
+see what it is um
+usage
+there's no usage i
+i think because you're not running
+anything in there that could be the
+reason because uh
+is there anything that's been built
+under that subscription
+yes so this is where we keep
+our blob storage accounts which is like
+you know 20 terabyte like
+maybe it's like 25 24 is terabytes of
+data
+and blob storage which is very cheap for
+us and then
+our uh our data warehouse for our bi
+tool that we're using
+and trying to currently connect into our
+power bi
+uh world i guess
+so you know what it also needs to be
+migrated
+uh so this gateway also needs to be
+migrated over
+no this is already there this is already
+with connection
+like under the microsoft csp or the
+connection csp i'm not sure how
+that is worded um
+i had a question about viewing billing
+information but i feel like
+maybe i should leave that for another
+discussion maybe something directly with
+nate
+and you guys in the background but as
+far as migrating
+our pay-as-you-go environment i am
+i guess we have two things there
+learn something new every moment
+so what's my actual archive stuff here
+yeah so these two things we can move the
+whole subscription over i
+i think i have to double check on if you
+lose usage encoders
+because i thought i saw that it was
+redirecting you to somewhere else
+and i can see your concern there how do
+you get that same
+level of information is it to our usage
+report something else and we'll have to
+check back on that but from a migration
+path perspective you would want both
+resources to be
+moved yes basically we want everything
+to be moved
+away from being billed on a credit card
+and um it'll be great to kind of have it
+all come in as one bill
+to simplify uh how we get data from our
+accounting department
+yep that makes sense so uh abdullah do
+you want to know anything more about the
+resources that
+it looks uh like backup services right
+and you said those could be moved
+without any
+impact the end point yeah everything
+everything could be moved around with no
+we have no connections to this data so
+that's like the problem that we're
+having now
+is that we have to manually you know
+install
+the azure file explorer to get to give
+a non-it person access to it and like
+you know basically train them
+on how to use this very technical tool
+so we kind of want to make it easier
+and i'm just trying to flush out the
+idea of
+do i have to throw more money at azure
+or is there a way for
+us to kind of hybrid this to use our
+microsoft licensing
+for servers that we have in-house in our
+virtual environment
+to host a local copy and then just copy
+everything over
+to blob storage to make sure that we
+have it in the cloud
+in case you know the world blows up but
+in reality
+the archive data that we're backing up
+to the cloud
+is is not something that is needed in
+the
+in case of a disaster right that's why
+we didn't
+back up an entire server to get that
+whereas
+excel fs02 does like we do pay you guys
+for the backup and disaster recovery
+so yes we're more than happy to move
+anything
+that we have as pay as you go over to
+csp
+uh nate you gotta get me some good bills
+and then after we migrate this
+since we're migrating the disaster the
+server that has disaster recovery and
+backup
+the next thing i would like to do is
+kind of move into
+uh the vpn setup
+if possible or if we're just doing
+discussions that's fine
+okay so uh you you don't want to migrate
+anything from on-prem to
+azure right as of right now we're not
+migrating servers
+that are on premises to azure we're
+trying to
+uh better use
+both sides of the fence right we're
+trying to better use our in-house in
+conjunction with what's available
+through the azure portal
+yep that makes sense right so basically
+you're looking for a
+hybrid setup yes and and to clean up
+what we currently have like as you see
+i'm very just clicking through
+everything trying to find you know
+information that i need
+so if there's a way to kind of
+reduce that you're getting started you
+just started in a number of different
+pools that's all
+smaller a smaller bucket here sure
+makes sense
+so there's definitely uh you were
+definitely versed my friend
+you should i've been through a couple of
+these and uh you've already you know
+yeah pretty steeped in the product very
+familiar
+with the portals and the you know the
+different um
+you know how you're using it in
+different ways and uh
+yeah pretty advanced i think this is uh
+he's a pretty good
+candidate what do you think it's all
+fair this one okay
+this this project is okay to jump into
+do we like this one yeah absolutely
+yeah it's easy i think i'm trying to
+still grapple the idea
+do we move the resources uh individually
+or remove the whole subscription and
+what will be beneficial as an end result
+and so team um any questions you have
+for those resources specifically are we
+good there
+abdullah salman no i think i got i got
+i got all the information i needed for
+now
+okay all right
+okay perfect um i do have a question
+that's a
+a little ahead of where we are but in
+terms of
+the vpn when we set up the vpn
+being that we're now going to have all
+of our resources in
+csp and i'm guessing in like one kind of
+bucket
+will as we add more backup and disaster
+recovery
+uh add more servers to our backup and
+discovery
+disaster recovery uh
+accounts and pools and containers things
+like that
+will we need to set up more than one vpn
+or is this vpn
+like the whole thing
+i mean the vpn gateway lets you add
+different subnets that you want to reach
+through that tunnel so you can add the
+different virtual networks
+to reach those networks so
+when we get raised enough
+got it because yeah as of right now
+we're really only backing up from one
+vlan
+which we just have a server vlan which
+encompasses all of our servers
+uh and
+and this situation
+yes that's fine so and then we just have
+the other
+server vlans that we have like our users
+wi-fi phone network and things like that
+and then we will just have all those
+deep
+all those ranges available to view the
+one range over
+the vpn to see the server in case of
+emergency so yeah we are
+we are looking great in that and that
+thought
+what's next
+um hello um for next
+abdullah do you need access to their
+tenant
+to their azure read-only access
+guys can you please elaborate what sort
+of access you're asking for
+the lie are you there yeah
+i think i think read-only access is
+maybe not necessary because there are
+only two resources in this case so
+if anyone else wants to
+run you were saying something
+yeah i was saying that we may require
+read only access to explore the
+resources within the specific as you go
+subscription
+to see uh if there are any dependent
+resources available there
+so it would be great if you can uh just
+uh give me a read only access to your
+tenant
+you got it so how do i go about doing
+that
+is this the access control area sorry i
+just lost you okay
+uh please repeat the ah okay um how do
+we go about doing that i'm not really
+sure
+i haven't had to give someone else
+access i think it's in this uh
+role assignment area but that's about
+the sponsors
+so the team will guide you how to add
+that to that subscription
+go ahead of them
+search resources please search user
+there you go and then click on this user
+right here
+what am i doing new user or a new guest
+user uh yeah i guess user i'm sharing my
+uh
+id uh on the chat so you can add that
+user email id here perfect
+so there we go
+huh yeah
+okay so we're doing invite new user yeah
+yeah
+yeah just click on the invite
+what are my options here job title block
+sign in now
+at the end of the page you can see
+invite here
+um
+once you've done that um you can um you
+need to go
+to the subscription yeah here you can
+search
+my name
+azure role assignment just guessing yeah
+yeah yeah
+there's no role assignment found for
+selected subscription
+uh you need to select assigned rules and
+then search my name in it
+okay so this is not from the user
+section
+yeah there's a third there's a there's a
+sign
+rolls under you know under subscription
+i am
+yeah i'm sorry on your left hand side
+you would see assign roles on the
+profile
+oh assigned roles got it okay
+add assignment
+and what am i signing you sir
+um uh can you please go back to
+the subscription and then there will be
+you see
+i am
+to go back to the subscription yeah
+okay i just want to keep you active here
+yeah if you go home and then find the
+page you go subscription okay so they're
+doing it that way okay
+so yeah
+now where do we go up though
+click on the access control i am
+yep i did
+all right search my name uh
+right here whoops
+you're out right there um
+sabri
+actually the screen is struck at my hand
+so i don't know
+uh exactly where you are um
+so right now your name is on the screen
+yeah
+uh add uh click on add rows
+add a role assignment so that yeah
+that's not under your name but that's
+the side
+click on the name okay click on the name
+and then it says assignment for
+selected user yeah let's search for my
+name
+here again gotcha
+this looks like it's looking for
+subscriptions that have been added but
+you don't have any role
+so
+okay so i'm guessing
+um
+grant access to resources at this scope
+by assigning a role to a user
+add gotcha select a role what is the
+role
+a reader correct
+lets you view everything but not make
+any changes
+there you go exactly
+so we're going to search you again
+yeah the role has been assigned it to uh
+for answer aubry
+as a reader
+yeah could you check if you got the
+email
+yeah just
+sorry let's get that off again
+hello getting a lot of weird sounds
+there yeah i'm getting that too
+okay making sure it wasn't just me
+being sucked into the matrix basically
+maybe we could win
+you know well you should have taken the
+red pill
+that was your fault
+yeah no you're not alone i hear it too
+um
+all right but at this point in time do
+we think we've handed up proper keys do
+these boys have access
+did i fall off completely no i hear you
+okay um i'm here too
+why is here um anybody else
+yeah i think we should yeah just give me
+a minute uh um i think my
+internet is a bit unstable so there's
+there's a reason why it's killing
+it it sounded like a storm yeah going
+through it
+that was him pulling the plug did you
+hear that that was the thing
+it's over
+oh
+we got you guys access there's a chat on
+the side of this
+uh nate by now i'm guessing you are
+super familiar with how to use teams
+with the working from home and
+aggressiveness of everyone
+making this jump um so
+uh we can get everybody out yeah yeah
+talking right there's a chat going on
+with this uh
+can we get this going yeah i think we're
+good for this step so
+i think that was use case one there were
+other couple of use cases i think you
+mentioned about federation
+um so we can talk about that if the team
+is still available otherwise we might
+need to reschedule
+yeah no i'm i'm fine going piece by
+piece and kind of figuring it out
+um this call checked off a checkbox of
+moving everything to csp which actually
+resolves a project that i kind of had
+on the back burner which is moving
+things away from credit cards
+and towards invoicing uh
+so this this works out for me in that
+case and it simplifies
+uh all of our microsoft bills and kind
+of grabs them into one uh
+into one bucket so it's a win for me
+absolutely yeah that's certainly going
+to be a win i think
+we'll try to reschedule for the other
+two right so i think the team's coming
+back
+team can you hear us yeah i've been on a
+call i was
+i think you guys couldn't hear me there
+was yeah we can hear yeah faran is
+checking if he got the access or not
+okay i believe this is where i left
+sorry guys i just got the invite uh
+sorry for for the delaying there's a bit
+instability here so that's the reason no
+that's fine
+the um okay
+all right so uh team can you please uh
+confirm if you got all the details that
+we needed we know which resources we
+need to migrate
+we got the access right
+yes we are good at uh right now okay
+that's great for me do you uh have any
+questions or so
+um i do not i do have a request
+um if powerful go ahead can you can you
+use
+this same invite and just update the
+time
+because i think i want to put some notes
+in this particular meeting it'll be
+great to kind of have them all together
+i'll update it sure sure yeah so foreign
+just
+keep it going with the same invite and
+hopefully this chat will just be here
+forever in case i want to
+quickly jot down notes for this direct
+thing
+oh perfect well usually this is what i
+do
+okay perfect all right guys
+okay so it was all right yeah
+we covered quite a bit of ground first
+session not bad guys
+and um yeah don't let us know uh next
+time around when's the next time that we
+all go out
+get together and uh do some more yep
+perfect so
+here are the next steps our team will
+look into the details that kwame have
+just shared and then we will get back to
+you with the effort and estimates uh
+effort and cost sound good to me that's
+amazing
+everybody have a fantastic afternoon if
+anybody needs me
+uh we're tied to the desk working hard
+guys
+all right perfect if we need anything
+we'll reach out to you
+thank you very much you guys have a good
+day all right thank you
+thank you have a nice day bye
